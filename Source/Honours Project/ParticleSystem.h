@@ -31,7 +31,7 @@ public:
 	glm::vec3 getTargetPosition() { return glm::vec3(0,0,0); }
 
 	float getSpawnRate() { return spawnRate; }
-	void setSpawnRate(float x) { spawnRate = x; if (spawnRate < 0.0f) spawnRate = 0.0f; if (spawnRate > 1000.0f) spawnRate = 1000.0f; }
+	void setSpawnRate(float x) { spawnRate = x; if (spawnRate < 0.0f) spawnRate = 0.0f; if (spawnRate > 5000.0f) spawnRate = 5000.0f; }
 	void modSpawnRate(float x) { setSpawnRate(spawnRate + x); }
 	float getSpeed() { return speed; }
 	void setSpeed(float x) { speed = x; if (speed < 0.0f) speed = 0.0f; if (speed > 10.0f) speed = 10.0f; }

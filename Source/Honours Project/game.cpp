@@ -138,7 +138,14 @@ int Game::init()
 
 int Game::initSDL()
 {
-	SDL_Init(SDL_INIT_EVERYTHING);
+	SDL_Init(0);
+		//SDL_INIT_TIMER |
+		//SDL_INIT_AUDIO |
+		//SDL_INIT_VIDEO | 
+		//SDL_INIT_JOYSTICK |
+		//SDL_INIT_HAPTIC | 
+		//SDL_INIT_GAMECONTROLLER |
+		//SDL_INIT_EVENTS 
 
 	Uint32 windowFlags;
 
@@ -715,14 +722,18 @@ int Game::render2D(long time)
 	if (particleToggle) {
 		ss.str(string());
 		ss << "Spawn Rate: " << precipitation->getSpawnRate();
-		drawTTFText(310, 10, ss.str().c_str(), fontArial, &viewProj);
+		drawTTFText(260, 10, ss.str().c_str(), fontArial, &viewProj);
 	}
 
-	if (!trackFPS) {
-		ss.str(string());
-		ss << "Avg FPS: " << avgFPS;
-		drawTTFText(500, 10, ss.str().c_str(), fontArial, &viewProj);
+	ss.str(string());
+	if (trackFPS) {
+		ss << "Avg FPS: Recording...";
 	}
+	else {
+		ss << "Avg FPS: " << avgFPS;
+		
+	}
+	drawTTFText(500, 10, ss.str().c_str(), fontArial, &viewProj);
 
 	glDepthFunc(GL_LEQUAL);
 
