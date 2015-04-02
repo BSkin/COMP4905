@@ -1,0 +1,45 @@
+﻿Build started 4/2/2015 6:49:43 PM.
+     1>Project "C:\Users\Ben\Desktop\Honours Project\Honours Project\Honours Project.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Settings.cpp game.cpp
+         Settings.cpp
+         game.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\math.h(631): warning C4005: 'M_PI' : macro redefinition
+                 c:\users\ben\desktop\honours project\honours project\sdl2-2.0.3\include\SDL_stdinc.h(350) : see previous definition of 'M_PI'
+     1>c:\users\ben\desktop\honours project\honours project\FrameBuffer.h(28): warning C4018: '>=' : signed/unsigned mismatch
+     1>game.cpp(10): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+     1>game.cpp(26): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>game.cpp(42): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>game.cpp(55): warning C4018: '<' : signed/unsigned mismatch
+     1>game.cpp(84): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>game.cpp(387): warning C4244: 'argument' : conversion from 'double' to 'long', possible loss of data
+     1>game.cpp(388): warning C4244: 'argument' : conversion from 'double' to 'long', possible loss of data
+     1>game.cpp(563): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
+     1>game.cpp(591): warning C4244: 'argument' : conversion from 'double' to 'long', possible loss of data
+     1>game.cpp(595): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
+     1>game.cpp(699): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ben\Desktop\Honours Project\Release\Honours Project.exe" /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" glew32.lib glu32.lib opengl32.lib "SDL2-2.0.3\lib\x86\SDL2.lib" "SDL2_ttf-2.0.12\lib\x86\SDL2_ttf.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ben\Desktop\Honours Project\Release\Honours Project.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ben\Desktop\Honours Project\Release\Honours Project.lib" /MACHINE:X86 /SAFESEH Release\AssetLoader.obj
+         Release\AssetManager.obj
+         Release\Camera.obj
+         Release\DynamicBufferParticleSystem.obj
+         Release\FrameBuffer.obj
+         Release\game.obj
+         Release\InputManager.obj
+         Release\main.obj
+         Release\Model.obj
+         Release\ParticleSystem.obj
+         Release\Settings.obj
+         Release\Shader.obj
+         Release\StaticBufferParticleSystem.obj
+         Release\Texture.obj
+         Generating code
+         Finished generating code
+         Honours Project.vcxproj -> C:\Users\Ben\Desktop\Honours Project\Release\Honours Project.exe
+     1>Done Building Project "C:\Users\Ben\Desktop\Honours Project\Honours Project\Honours Project.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.50
