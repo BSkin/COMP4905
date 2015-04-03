@@ -16,8 +16,8 @@ out vec4 outColour;
 
 uint random(uint seed) 
 {
-	uint sum = 0;
-	uint delta = 0x9e3779b9;
+	uint sum = 0u;
+	uint delta = 0x9e3779b9u;
 
 	uint result = 0u;
 	for (int n = 0; n < 3; n++) {
