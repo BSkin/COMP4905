@@ -21,6 +21,8 @@ Game::Game(char* gameName)
 	displayContext = NULL;
 	assetLoaderThread = NULL;
 
+	showControls = false;
+
 	state = 0;
 
 	tickindex=ticksum=0;
@@ -109,7 +111,6 @@ int Game::drawTTFText(int x, int y, const char * s, TTF_Font * font, glm::mat4 *
 
 
 	activeShader->setUniformf1("enableLighting", 0.0f);
-	glActiveTexture(GL_TEXTURE0);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
 	glm::mat4 scale = glm::scale(glm::vec3(sText->w, sText->h, 0.0f));
@@ -357,6 +358,8 @@ int Game::start()
 	assetManager->forceLoadTexture("Textures\\floor.tga");
 	assetManager->forceLoadTexture("Textures\\house.tga");
 	assetManager->forceLoadTexture("Textures\\umbrella.tga");
+	assetManager->forceLoadTexture("Textures\\controls.tga");
+	controlsTexture = assetManager->getTexture("Textures\\controls.tga");
 	umbrellaTexture = assetManager->getTexture("Textures\\umbrella.tga");
 	houseTexture = assetManager->getTexture("Textures\\house.tga");
 	floorTexture = assetManager->getTexture("Textures\\floor.tga");
@@ -522,6 +525,8 @@ int Game::update(long elapsedTime, long totalElapsedTime)
 
 	if (isKeyPressed(IM_L)) toggleFPSTracking();
 
+	if (isKeyPressed(IM_F1)) showControls = !showControls;
+
 	if (trackFPS) {
 		fpsList.push_back(frameRate);
 	}
@@ -659,6 +664,25 @@ int Game::renderFrame(long elapsedTime, long totalElapsedTime) {
 	return 0;
 }
 
+int Game::drawScreenRect(int x, int y, int width, int height, Texture * texture, glm::mat4 * projViewMatrix)
+{
+	if (texture == 0) return -1;
+	
+	defaultShader->activate();
+	activeShader->setUniformf1("enableLighting", 0.0f);
+	glActiveTexture(GL_TEXTURE0);
+	texture->bindTexture();
+	glUniform1i(glGetUniformLocation(activeShader->getShaderHandle(), "texS"), 0);
+	glm::mat4 scale = glm::scale(glm::vec3(width, height, 0.0f));
+	glm::mat4 translation = glm::translate(glm::vec3((-x) + Settings::getWindowWidth()/2 - width/2, (-y) + Settings::getWindowHeight()/2 - height/2, 0));
+
+	glm::mat4 matrix = *projViewMatrix * translation * scale;
+	activeShader->setUniformMatrixf4("worldViewProj", matrix);
+	quad->render();
+
+	return 0;
+}
+
 void Game::drawRect(float x, float y, float z)
 {
 	glm::mat4 world;
@@ -716,6 +740,13 @@ int Game::render2D(long time)
 	drawTTFText(10, 10, ss.str().c_str(), fontArial, &viewProj);
 
 	ss.str(string());
+	if (showControls)
+		ss << "F1 - Hide Controls";
+	else
+		ss << "F1 - Show Controls";
+	drawTTFText(10, 40, ss.str().c_str(), fontArial, &viewProj);
+
+	ss.str(string());
 	ss << "Speed: " << precipitation->getSpeed();
 	drawTTFText(135, 10, ss.str().c_str(), fontArial, &viewProj);
 
@@ -734,6 +765,14 @@ int Game::render2D(long time)
 		
 	}
 	drawTTFText(500, 10, ss.str().c_str(), fontArial, &viewProj);
+	
+	calculateView(&view, glm::vec3(0, 0, -0.1), glm::vec3(0,0,0), glm::vec3(0,1,0));
+	calculateOrthographicProjection(&proj, (float)Settings::getWindowWidth(), (float)Settings::getWindowHeight(), 0.0f, 10.0f);
+	viewProj = proj * view;
+
+	if (showControls) {
+		drawScreenRect(Settings::getWindowWidth()/2 - 256, Settings::getWindowHeight()/2 - 256, 512, 512, controlsTexture, &viewProj);
+	}
 
 	glDepthFunc(GL_LEQUAL);
 

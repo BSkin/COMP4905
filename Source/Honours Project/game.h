@@ -131,6 +131,7 @@ private:
 	Texture * umbrellaTexture;
 	Texture * houseTexture;
 	Texture * floorTexture;
+	Texture * controlsTexture;
 	Shader * textShader;
 	Shader * defaultShader;
 	Shader * depthShader;
@@ -138,6 +139,7 @@ private:
 	FrameBuffer * tempFrameBuffer;
 
 	bool renderObject;
+	bool showControls;
 
 	double avgFPS;
 	bool trackFPS;
@@ -148,6 +150,7 @@ private:
 	void toggleParticleSystem();
 	ParticleSystem * precipitation;
 
+	int drawScreenRect(int x, int y, int width, int height, Texture * t, glm::mat4 * projViewMatrix);
 	void drawRect(float x, float y, float z);
 	void drawRect(float x, float y, float z, float rotation);
 	void drawRect(glm::vec3 lookAt, glm::vec3 position, glm::vec3 up, glm::vec3 size);
