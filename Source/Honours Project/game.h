@@ -145,6 +145,7 @@ private:
 	bool trackFPS;
 	list<double> fpsList;
 	void toggleFPSTracking();
+	bool capFPS;
 
 	bool particleToggle;
 	void toggleParticleSystem();

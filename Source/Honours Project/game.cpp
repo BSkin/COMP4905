@@ -22,6 +22,7 @@ Game::Game(char* gameName)
 	assetLoaderThread = NULL;
 
 	showControls = false;
+	capFPS = true;
 
 	state = 0;
 
@@ -399,14 +400,14 @@ int Game::start()
 		
 		double averageElapsedTime = calcFps(elapsedTime+sleepTime);
 		frameRate = 1000.0/averageElapsedTime;
-
+		
 		//Framerate Limit Calculations
 		elapsedTime = SDL_GetTicks() - lastTime;
 		targetSleep = timePerFrame - elapsedTime + sleepRemainder;
 		if (targetSleep > 0) sleepRemainder = targetSleep - (Uint32)targetSleep;
-
+	
 		startSleep = SDL_GetTicks();
-		while ((Uint32)(startSleep+targetSleep) > SDL_GetTicks());
+		if (capFPS) { while ((Uint32)(startSleep+targetSleep) > SDL_GetTicks()); }
 		sleepTime = SDL_GetTicks() - startSleep;
 	}
     return 0;
@@ -526,6 +527,7 @@ int Game::update(long elapsedTime, long totalElapsedTime)
 	if (isKeyPressed(IM_L)) toggleFPSTracking();
 
 	if (isKeyPressed(IM_F1)) showControls = !showControls;
+	if (isKeyPressed(IM_F2)) capFPS = !capFPS;
 
 	if (trackFPS) {
 		fpsList.push_back(frameRate);
@@ -745,6 +747,10 @@ int Game::render2D(long time)
 	else
 		ss << "F1 - Show Controls";
 	drawTTFText(10, 40, ss.str().c_str(), fontArial, &viewProj);
+
+	ss.str(string());
+	ss << "F2 - Toggle Framerate Cap";
+	drawTTFText(10, Settings::getWindowHeight() - 30, ss.str().c_str(), fontArial, &viewProj);
 
 	ss.str(string());
 	ss << "Speed: " << precipitation->getSpeed();

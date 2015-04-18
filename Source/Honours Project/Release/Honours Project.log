@@ -1,66 +1,24 @@
-﻿Build started 4/2/2015 9:00:23 PM.
+﻿Build started 4/17/2015 8:44:36 PM.
      1>Project "C:\Users\Ben\Desktop\Projects\COMP4905\Source\Honours Project\Honours Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AssetLoader.cpp AssetManager.cpp Camera.cpp DynamicBufferParticleSystem.cpp FrameBuffer.cpp game.cpp InputManager.cpp main.cpp Model.cpp ParticleSystem.cpp Settings.cpp Shader.cpp StaticBufferParticleSystem.cpp Texture.cpp
-         AssetLoader.cpp
-         AssetManager.cpp
-         Camera.cpp
-         GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
-         GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
-         DynamicBufferParticleSystem.cpp
-     1>c:\users\ben\desktop\projects\comp4905\source\honours project\FrameBuffer.h(28): warning C4018: '>=' : signed/unsigned mismatch
-     1>DynamicBufferParticleSystem.cpp(72): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>DynamicBufferParticleSystem.cpp(73): warning C4244: 'argument' : conversion from 'long' to 'float', possible loss of data
-     1>DynamicBufferParticleSystem.cpp(135): warning C4244: 'argument' : conversion from 'long' to 'float', possible loss of data
-         FrameBuffer.cpp
-     1>c:\users\ben\desktop\projects\comp4905\source\honours project\FrameBuffer.h(28): warning C4018: '>=' : signed/unsigned mismatch
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt game.cpp
          game.cpp
      1>C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\math.h(631): warning C4005: 'M_PI' : macro redefinition
                  c:\users\ben\desktop\projects\comp4905\source\honours project\sdl2-2.0.3\include\SDL_stdinc.h(350) : see previous definition of 'M_PI'
      1>c:\users\ben\desktop\projects\comp4905\source\honours project\FrameBuffer.h(28): warning C4018: '>=' : signed/unsigned mismatch
      1>game.cpp(10): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
-     1>game.cpp(28): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>game.cpp(44): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>game.cpp(29): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>game.cpp(45): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
-     1>game.cpp(57): warning C4018: '<' : signed/unsigned mismatch
-     1>game.cpp(86): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>game.cpp(397): warning C4244: 'argument' : conversion from 'double' to 'long', possible loss of data
+     1>game.cpp(58): warning C4018: '<' : signed/unsigned mismatch
+     1>game.cpp(87): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
      1>game.cpp(398): warning C4244: 'argument' : conversion from 'double' to 'long', possible loss of data
-     1>game.cpp(575): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
-     1>game.cpp(603): warning C4244: 'argument' : conversion from 'double' to 'long', possible loss of data
-     1>game.cpp(607): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
-     1>game.cpp(730): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         InputManager.cpp
-         main.cpp
-     1>C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\math.h(631): warning C4005: 'M_PI' : macro redefinition
-                 c:\users\ben\desktop\projects\comp4905\source\honours project\sdl2-2.0.3\include\SDL_stdinc.h(350) : see previous definition of 'M_PI'
-     1>c:\users\ben\desktop\projects\comp4905\source\honours project\FrameBuffer.h(28): warning C4018: '>=' : signed/unsigned mismatch
-         Model.cpp
-     1>Model.cpp(21): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
-     1>Model.cpp(41): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237) : see declaration of 'fscanf'
-     1>Model.cpp(47): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237) : see declaration of 'fscanf'
-     1>Model.cpp(52): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237) : see declaration of 'fscanf'
-     1>Model.cpp(57): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237) : see declaration of 'fscanf'
-     1>Model.cpp(63): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237) : see declaration of 'fscanf'
-         ParticleSystem.cpp
-         Settings.cpp
-         Shader.cpp
-     1>Shader.cpp(89): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
-         StaticBufferParticleSystem.cpp
-     1>StaticBufferParticleSystem.cpp(42): warning C4244: 'argument' : conversion from 'long' to 'float', possible loss of data
-         Texture.cpp
-     1>Texture.cpp(39): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
-     1>Texture.cpp(237): warning C4018: '<' : signed/unsigned mismatch
-     1>Texture.cpp(365): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>game.cpp(399): warning C4244: 'argument' : conversion from 'double' to 'long', possible loss of data
+     1>game.cpp(577): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
+     1>game.cpp(605): warning C4244: 'argument' : conversion from 'double' to 'long', possible loss of data
+     1>game.cpp(609): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
+     1>game.cpp(732): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ben\Desktop\Projects\COMP4905\Source\Release\Honours Project.exe" /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" glew32.lib glu32.lib opengl32.lib "SDL2-2.0.3\lib\x86\SDL2.lib" "SDL2_ttf-2.0.12\lib\x86\SDL2_ttf.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ben\Desktop\Projects\COMP4905\Source\Release\Honours Project.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ben\Desktop\Projects\COMP4905\Source\Release\Honours Project.lib" /MACHINE:X86 /SAFESEH Release\AssetLoader.obj
          Release\AssetManager.obj
@@ -83,4 +41,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:20.85
+Time Elapsed 00:00:04.18
