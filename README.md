@@ -1,6 +1,5 @@
 # COMP4905
-Carleton University Honours Project
-Created using C++, OpenGL and SDL
+Carleton University Honours Project. Created using C++, OpenGL and SDL
 
 Weather System Utilizing GPU Managed Particles and a Depth Pre-Pass Based Collision Detection Algorithm
 
