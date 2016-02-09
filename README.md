@@ -8,3 +8,5 @@ This project aims to create a weather particle system that supports proper colli
 between falling snow and objects rendered in the scene. Utilizing C++ and OpenGL, various buffers
 and shaders are used to manage the presented particle systems. Two distinct particle systems are
 created with this purpose in mind, and the advantages and disadvantages of each are discussed.
+
+https://www.youtube.com/watch?v=T0VgjW26dIU
